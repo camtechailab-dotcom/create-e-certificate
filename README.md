@@ -6,6 +6,7 @@ This automated script reads a list of student names from a CSV file and stamps t
 
 Ensure your folder structure looks exactly like this before running the script:
 
+```
 create-e-certificate/
 │
 ├── main.py                # The main Python script
