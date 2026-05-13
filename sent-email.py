@@ -1,6 +1,7 @@
 import smtplib
 import os
 import csv
+import time  # <-- NEW: Imported for the delay
 from email.message import EmailMessage
 from dotenv import load_dotenv
 
@@ -94,7 +95,11 @@ def send_csv_emails():
 
                     # Send the email
                     server.send_message(msg)
-                    print(f"📧 Email sent to: {name} at {recipient_email}\n")
+                    print(f"📧 Email sent to: {name} at {recipient_email}")
+                    
+                    # --- NEW: DELAY TO AVOID GOOGLE LOCKOUT ---
+                    print("⏳ Pausing for 8 seconds to mimic human sending rate...\n")
+                    time.sleep(8)
                 
         print("🎉 All emails from the CSV have been processed successfully!")
 
